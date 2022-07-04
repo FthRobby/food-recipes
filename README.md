@@ -2,7 +2,7 @@
 
 ## Ayo Masak
 ### Project Result :
-<img src="src/assets/result/result.png" width=900/>
+<img src="src/assets/result/result.png" width=700/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
