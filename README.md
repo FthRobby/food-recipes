@@ -1,8 +1,7 @@
-# Getting Started with Create React App
+# Ayo Masak | Web Recipe App
 
-## Ayo Masak
 ### Project Result :
-<img src="src/assets/result/result.png" width=700/>
+<img src="src/assets/result/result.png" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
