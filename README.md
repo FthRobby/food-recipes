@@ -4,7 +4,7 @@
 ## Project Result :
 
 ### Desktop Result
-<img src="src/assets/result/result.png" width=600/>
+<img src="src/assets/result/result.png" width=900/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
