@@ -53,15 +53,21 @@ export default function SaveRecipes() {
                     </div>
                     <div className="flex flex-row justify-between items-center text-center px-5 mb-4  font-semibold">
                       <div className="flex flex-col">
-                        <div className="text-sm text-gray-500">Waktu Masak</div>
+                        <div className="text-sm text-gray-500">
+                          <i className="fa fa-clock"></i>
+                        </div>
                         <div>{recipe.times}</div>
                       </div>
                       <div className="flex flex-col mx-3">
-                        <div className="text-sm text-gray-500">Porsi</div>
+                        <div className="text-sm text-gray-500">
+                          <i className="fa fa-utensils"></i>
+                        </div>
                         <div>{recipe.portion}</div>
                       </div>
                       <div className="flex flex-col">
-                        <div className="text-sm text-gray-500">Level</div>
+                        <div className="text-sm text-gray-500">
+                          <i className="fa fa-clipboard-list"></i>
+                        </div>
                         <div>{recipe.dificulty}</div>
                       </div>
                     </div>

@@ -56,10 +56,10 @@ export default function SearchForm() {
         />
         <button
           className="
-                ml-2 py-2 px-3 text-gray-100 bg-red-500 rounded"
+                ml-2 py-2 px-3 text-gray-100 bg-browen-800 rounded"
           onClick={handleSearch}
         >
-          Search
+          <i className="fa fa-magnifying-glass"></i>
         </button>
       </div>
       {/* result */}

@@ -44,18 +44,19 @@ export default function DetailRecipes() {
           <div className="text-xl lg:text-3xl font-semibold mt-5 w-full">
             {recipes.title}
           </div>
-          <div className="w-full">{recipes.desc}</div>
+
           {recipes.thumb !== null ? (
             <img
               src={recipes.thumb}
               className="mt-4 mb-5 
-                    w-full h-auto object-cover
-                    rounded-md shadow-lg"
+                    
+                    rounded-md shadow-lg float-left"
               alt={`${recipes.title}`}
             />
           ) : (
             ""
           )}
+          <div className="w-full">{recipes.desc}</div>
 
           <div className="flex flex-col-reverse lg:flex-row justify-between mb-5">
             <div className="flex flex-col">
@@ -88,15 +89,21 @@ export default function DetailRecipes() {
                     shadow-lg bg-gray-100"
             >
               <div className="flex flex-col lg:mb-4">
-                <p className="text-sm text-gray-500">Waktu Masak</p>
+                <p className="text-sm text-gray-500">
+                  <i className="fa fa-clock"></i>
+                </p>
                 <p className="font-semibold">{recipes.times}</p>
               </div>
               <div className="flex flex-col lg:mb-4">
-                <p className="text-sm text-gray-500">Porsi</p>
+                <p className="text-sm text-gray-500">
+                  <i className="fa fa-utensils"></i>
+                </p>
                 <p className="font-semibold">{recipes.servings}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-sm text-gray-500">Level</p>
+                <p className="text-sm text-gray-500">
+                  <i className="fa fa-clipboard-list"></i>
+                </p>
                 <p className="font-semibold">{recipes.dificulty}</p>
               </div>
             </div>
