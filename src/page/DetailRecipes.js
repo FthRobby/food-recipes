@@ -7,11 +7,14 @@ import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import { PropagateLoader } from "react-spinners";
 
+import "react-toastify/dist/ReactToastify.css";
+
 export default function DetailRecipes() {
   let { params } = useRouteMatch();
   const [recipes, setRecipes] = useState("");
   const [ingredient, setIngredient] = useState([]);
   const [step, setStep] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -45,18 +48,13 @@ export default function DetailRecipes() {
             {recipes.title}
           </div>
 
-          {recipes.thumb !== null ? (
-            <img
-              src={recipes.thumb}
-              className="mt-4 mb-5 
-                    
-                    rounded-md shadow-lg float-left"
-              alt={`${recipes.title}`}
-            />
-          ) : (
-            ""
-          )}
-          <div className="w-full">{recipes.desc}</div>
+          <img
+            src={recipes.thumb}
+            className="mt-4 mb-5 rounded-md shadow-lg "
+            alt={`${recipes.title}`}
+          />
+
+          <div className="w-full mb-5">{recipes.desc}</div>
 
           <div className="flex flex-col-reverse lg:flex-row justify-between mb-5">
             <div className="flex flex-col">
@@ -71,10 +69,12 @@ export default function DetailRecipes() {
                 })}
               </div>
               <div>
-                <div className="text-2xl font-semibold mb-2">Cara Masak</div>
+                <div className="text-2xl font-semibold mb-2 mt-5">
+                  Cara Masak
+                </div>
                 {step.map((item, index) => {
                   return (
-                    <div key={index} className="pl-3 text-xl font-light">
+                    <div key={index} className="pl-3 text-xl font-light w-full">
                       {item}
                     </div>
                   );
