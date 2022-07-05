@@ -32,9 +32,7 @@ export default function Recipes() {
           }}
         >
           <div className="flex flex-col items-center">
-            <div className="text-3xl font-semibold capitalize mt-32">
-              Cari Resep
-            </div>
+            <div className="text-3xl font-semibold capitalize mt-32"></div>
             <div className="mt-4 w-full">
               <SearchForm />
             </div>
