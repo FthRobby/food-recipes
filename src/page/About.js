@@ -18,11 +18,11 @@ export default function About() {
         </div>
         <div>
           <p className="mt-3 capitalize text-lg">
-            Ayo Masak adalah web pencarian resep makanan dan minuman. Selain
-            pencarian resep user juga dapat menyimapan resep pada device user,
-            sehiggga resep dapat dibuka kembali jika user akan mencoba resep
-            tersebut di kemudian hari, dan user tidak perlu susah-susah untuk
-            mencari kembali resep tersebut. <br />
+            Ayo Masak adalah web pencarian resep makanan dan minuman. Web ini
+            mempunyai fitur save resep yang berfungsi untuk menyimpan resep dan
+            user bisa membuka kembali resep tersebut tanpa harus mencarinya lagi
+            di form pencarian. Hal itu akan sangat membantu untuk yang baru
+            belajar memasak. <br />
             data resep yang disedikan berasal dari{" "}
             <a
               className="underline underline-offset-1"
