@@ -30,16 +30,24 @@ export default function NavBar() {
           <nav className="">
             <ul className="hidden lg:flex items-center font text-white">
               <li className={`mx-3 ${activeNavLink("/")}`}>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <i className="fa fa-house text-lg px-1"></i> Home
+                </Link>
               </li>
               <li className={`mx-3 ${activeNavLink("/recipes")}`}>
-                <Link to="/recipes">Resep</Link>
+                <Link to="/recipes">
+                  <i className="fa fa-clipboard-list text-lg px-1"></i> Resep
+                </Link>
               </li>
               <li className={`mx-3 ${activeNavLink("/saved-recipes")}`}>
-                <Link to="/saved-recipes">Resep Favorit</Link>
+                <Link to="/saved-recipes">
+                  <i className="fa fa-bookmark text-lg px-1"></i> Resep Favorit
+                </Link>
               </li>
               <li className={`mx-3 ${activeNavLink("/about")}`}>
-                <Link to="/about">Tentang</Link>
+                <Link to="/about">
+                  <i className="fab fa-angular text-lg px-1"></i> Tentang
+                </Link>
               </li>
             </ul>
             <button className="block lg:hidden" onClick={() => toggleMenu()}>
@@ -66,16 +74,25 @@ export default function NavBar() {
         <div className="px-5 block lg:hidden w-full bg-gray-800 h-auto ">
           <ul className="container mx-auto flex flex-col font text-white">
             <li className={`py-2 ${activeNavLink("/")}`}>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <i className="fa fa-home"></i> Home
+              </Link>
             </li>
             <li className={`py-2 ${activeNavLink("/recipes")}`}>
-              <Link to="/recipes">Resep</Link>
+              <Link to="/recipes">
+                {" "}
+                <i className="fa fa-clipboard-list"></i> Resep
+              </Link>
             </li>
             <li className={`py-2 ${activeNavLink("/saved-recipes")}`}>
-              <Link to="/saved-recipes">Resep Favorit</Link>
+              <Link to="/saved-recipes">
+                <i className="fa fa-bookmark"></i> Resep Favorit
+              </Link>
             </li>
             <li className={`pb-3 ${activeNavLink("/about")}`}>
-              <Link to="/about">Tentang</Link>
+              <Link to="/about">
+                <i className="fab fa-angular "></i> Tentang
+              </Link>
             </li>
           </ul>
         </div>
