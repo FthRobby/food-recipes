@@ -69,13 +69,13 @@ export default function NavBar() {
               <Link to="/">Home</Link>
             </li>
             <li className={`py-2 ${activeNavLink("/recipes")}`}>
-              <Link to="/recipes">Recipes</Link>
+              <Link to="/recipes">Resep</Link>
             </li>
             <li className={`py-2 ${activeNavLink("/saved-recipes")}`}>
-              <Link to="/saved-recipes">My Recipes</Link>
+              <Link to="/saved-recipes">Resep Favorit</Link>
             </li>
             <li className={`pb-3 ${activeNavLink("/about")}`}>
-              <Link to="/about">About</Link>
+              <Link to="/about">Tentang</Link>
             </li>
           </ul>
         </div>
