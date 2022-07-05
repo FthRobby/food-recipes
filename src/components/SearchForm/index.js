@@ -52,7 +52,7 @@ export default function SearchForm() {
           name="key"
           onChange={handleChange}
           className="w-full lg:w-112 py-4 px-5 shadow-xl rounded font-semibold"
-          placeholder="Ayam Bakar...."
+          placeholder="Cari Resep Disini...."
         />
         <button
           className="
@@ -76,9 +76,9 @@ export default function SearchForm() {
                         "
           >
             <div className="flex  justify-between ">
-              <p className="capitalize">Hasil Pencarian {keyword}</p>
+              <p className="capitalize">Hasil Pencarian {keyword} :</p>
               <button
-                className="px-2 bg-red-500 text-gray-100"
+                className="px-2 bg-browen-800 text-gray-100"
                 onClick={() => setActive(false)}
               >
                 <i className="fa fa-xmark"></i>
