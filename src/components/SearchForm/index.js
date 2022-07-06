@@ -53,6 +53,7 @@ export default function SearchForm() {
           onChange={handleChange}
           className="w-full lg:w-112 py-4 px-5 shadow-xl rounded font-semibold"
           placeholder="Cari Resep Disini...."
+          autoComplete="off"
         />
         <button
           className="
