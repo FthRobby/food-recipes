@@ -10,7 +10,16 @@ export default function Hero({ refRecipes }) {
 
   return (
     <div className="container mx-auto px-5">
-      <div className="mt-16 lg:mt-24 flex flex-col lg:flex-row lg:justify-between ">
+      {/* show image hero on mobile views and hidden it when desktop view */}
+      <div className="lg:block items-center flex flex-col mt-5">
+        <img
+          src={ImageHero}
+          style={{ width: "267px" }}
+          alt="Ayo masak chef"
+          className="lg:hidden"
+        />
+      </div>
+      <div className="mt-12 lg:mt-24 flex flex-col lg:flex-row lg:justify-between ">
         <div className="text-3xl lg:text-5xl text-gray-800 text-center lg:text-left font-bold capitalize">
           <p>memasak tidaklah sulit, </p>
           <p className="mb-4">
