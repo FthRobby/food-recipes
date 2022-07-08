@@ -7,7 +7,9 @@ import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import { PropagateLoader } from "react-spinners";
 
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRecipes } from "../context/recipes-context";
 
 export default function DetailRecipes() {
   let { params } = useRouteMatch();
@@ -30,6 +32,9 @@ export default function DetailRecipes() {
       })
       .catch((err) => console.log(err.message));
   }, [params]);
+
+  // handle save recipe
+  const { handleSave, notify } = useRecipes();
   return (
     <div>
       <Navbar />
@@ -46,6 +51,19 @@ export default function DetailRecipes() {
         <div className="container mx-auto px-5">
           <div className="text-xl lg:text-3xl font-semibold mt-5 w-full">
             {recipes.title}
+
+            <div className="flex justify-self-stretch">
+              <button
+                className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
+                onClick={() => {
+                  handleSave(params, recipes.thumb);
+                  // handleSave(params);
+                  notify();
+                }}
+              >
+                Simpan Resep <i className="fa fa-bookmark"></i>
+              </button>
+            </div>
           </div>
 
           <img
@@ -110,7 +128,7 @@ export default function DetailRecipes() {
           </div>
         </div>
       )}
-
+      <ToastContainer />
       <Footer />
     </div>
   );

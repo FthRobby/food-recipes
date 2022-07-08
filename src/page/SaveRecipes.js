@@ -11,7 +11,6 @@ import { ReactComponent as Empty } from "../assets/images/empty.svg";
 
 export default function SaveRecipes() {
   const { saveRecipes, handleRemoveItem, removeNetify } = useRecipes();
-
   return (
     <>
       <Navbar />
