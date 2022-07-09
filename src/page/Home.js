@@ -21,8 +21,10 @@ export default function Home() {
       <Navbar />
       <Hero refRecipes={refRecipes} />
       <div className="container mx-auto px-5 mt-12 ">
-        <div className="title-section " ref={refRecipes}>
-          <p className="text-gray-800">Resep Ayo Masak</p>
+        <div className="title-section ">
+          <p className="text-gray-800" ref={refRecipes}>
+            Resep Ayo Masak
+          </p>
         </div>
         <div className="flex flex-col mb-5">
           {status === "success" ? (
@@ -33,18 +35,17 @@ export default function Home() {
                     key={index}
                     className="h-auto card border-zinc-50 shadow "
                   >
-                    <div className="flex justify-self-end">
+                    <div className="justify-self-auto">
                       <button
-                        className={`px-3 py-1 absolute -mt-6 
-                                     text-red-500 
-                                    disabled:opacity-50
+                        style={{ zIndex: "10" }}
+                        className={`px-3 py-2 text-sm text-white font-bold bg-browen-800 rounded-md self-center shadow-2xl mb-2
                                     `}
                         onClick={() => {
                           handleSave(recipe);
                           notify();
                         }}
                       >
-                        <i className="fa fa-bookmark text-4xl"></i>
+                        Simpan Resep <i className="fa fa-bookmark text-sm"></i>
                       </button>
                     </div>
                     <Link
@@ -52,7 +53,7 @@ export default function Home() {
                       thumb={recipe.thumb}
                     >
                       <img
-                        className="h-40 w-full object-cover rounded-md"
+                        className="h-50 w-full object-cover rounded-md"
                         src={recipe.thumb}
                         alt={recipe.key}
                       />

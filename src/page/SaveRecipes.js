@@ -14,24 +14,24 @@ export default function SaveRecipes() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen container mx-auto px-5 ">
+      <div className="min-h-screen container mx-auto px-5 mt-32">
         <div className="text-2xl font-bold mt-5 mb-5 text-gray-800">
-          Resep Disimpan
+          Resep Yang Kamu Simpan
         </div>
         {saveRecipes.length ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
             {saveRecipes.map((recipe, index) => {
               return (
                 <div key={index} className="h-auto card border-zinc-50 shadow">
-                  <div className="flex justify-self-end">
+                  <div className="justify-self-end">
                     <button
-                      className="px-3 py-1 absolute -mt-6 text-red-500 disabled:opacity-50"
+                      className="px-3 py-2 text-sm text-white font-bold bg-browen-800 rounded-md self-center shadow-2xl mb-2"
                       onClick={() => {
                         handleRemoveItem(recipe.key);
                         removeNetify();
                       }}
                     >
-                      <i className="fa fa-xmark"></i>
+                      Hapus Resep <i className="fa fa-trash text-sm"></i>
                     </button>
                   </div>
                   <Link
@@ -39,7 +39,7 @@ export default function SaveRecipes() {
                     thumb={recipe.thumb}
                   >
                     <img
-                      className="h-40 w-full object-cover rounded-md"
+                      className="h-50 w-full object-cover rounded-md"
                       src={recipe.thumb}
                       alt={recipe.key}
                     />
@@ -77,7 +77,7 @@ export default function SaveRecipes() {
           </div>
         ) : (
           <div className=" flex flex-col items-center">
-            <Empty style={{ height: "500px", width: "300px" }} />
+            <Empty style={{ height: "450px", width: "300px" }} />
             <div className="py-5 font-semibold capitalize">
               Tidak ada resep yang disimpan
             </div>

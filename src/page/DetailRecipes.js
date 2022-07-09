@@ -48,8 +48,8 @@ export default function DetailRecipes() {
           />
         </div>
       ) : (
-        <div className="container mx-auto px-5">
-          <div className="text-xl lg:text-3xl font-semibold mt-5 w-full">
+        <div className="container mx-auto px-5 mt-18">
+          <div className="text-xl lg:text-3xl font-semibold w-full">
             {recipes.title}
 
             <div className="flex justify-self-stretch">

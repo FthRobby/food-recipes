@@ -9,7 +9,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen container mx-auto px-5">
+      <div className="min-h-screen container mx-auto px-5 mt-32">
         <div className="text-2xl font-bold mt-5 text-center text-gray-800">
           Tentang Ayo Masak
         </div>

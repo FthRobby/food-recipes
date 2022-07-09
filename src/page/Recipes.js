@@ -26,7 +26,7 @@ export default function Recipes() {
       <div className="min-h-screen w-full">
         <NavBar />
         <div
-          className="w-full h-112 bg-cover bg-center bg-gray-200"
+          className="w-full h-112 bg-cover mt-16 bg-center bg-gray-200"
           style={{
             backgroundImage: `url('${imageSearch}')`,
           }}
@@ -44,23 +44,21 @@ export default function Recipes() {
           </div>
           {status === statusList.success ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
-              {recipes.map((recipe, index) => {
+              {recipes.slice(0, 12).map((recipe, index) => {
                 return (
                   <div
                     key={index}
-                    className="h-auto card border-zinc-50 shadow"
+                    className="h-auto card border-zinc-50 shadow-lg"
                   >
-                    <div className="flex justify-self-end">
+                    <div className="justify-self-end">
                       <button
-                        className="px-3 py-1 absolute -mt-6 
-                                    text-red-500 
-                                   disabled:opacity-50"
+                        className="px-3 py-2 text-sm text-white font-bold bg-browen-800 rounded-md self-center shadow-2xl mb-2"
                         onClick={() => {
                           handleSave(recipe);
                           notify();
                         }}
                       >
-                        <i className="fa fa-bookmark text-4xl"></i>
+                        Simpan Resep <i className="fa fa-bookmark text-sm"></i>
                       </button>
                     </div>
                     <Link
@@ -68,7 +66,7 @@ export default function Recipes() {
                       thumb={recipe.thumb}
                     >
                       <img
-                        className="h-40 w-full object-cover rounded-md"
+                        className="h-50 w-full object-cover rounded-md"
                         src={recipe.thumb}
                         alt={recipe.key}
                       />
