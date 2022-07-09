@@ -64,13 +64,12 @@ export const RecipesContextProvider = ({ children }) => {
   const notify = () => {
     toast(" ✅ Resep disimpan", {
       position: "bottom-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: false,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      transition: "slide",
       theme: "light",
     });
   };
@@ -78,13 +77,12 @@ export const RecipesContextProvider = ({ children }) => {
   const removeNetify = () => {
     toast("⚠️ Resep dihapus", {
       position: "bottom-left",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: false,
+      pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      transition: "slide",
       theme: "light",
     });
   };
