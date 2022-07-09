@@ -62,28 +62,30 @@ export const RecipesContextProvider = ({ children }) => {
 
   // toastify
   const notify = () => {
-    toast.info("Resep Disimpan ke Favorite", {
+    toast(" ✅ Resep disimpan", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
+      transition: "slide",
       theme: "light",
     });
-    console.log("toast");
   };
 
   const removeNetify = () => {
-    toast.error("Resep Di Hapus dari Favorite", {
-      position: "bottom-right",
+    toast("⚠️ Resep dihapus", {
+      position: "bottom-left",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
+      transition: "slide",
+      theme: "light",
     });
   };
 
