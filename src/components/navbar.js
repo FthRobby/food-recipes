@@ -15,7 +15,10 @@ export default function NavBar() {
   };
   return (
     <header>
-      <div className=" w-full py-4 px-5 bg-dark-800 ">
+      <div
+        style={{ position: "fixed", top: "0" }}
+        className=" w-full py-4 px-5 bg-dark-800"
+      >
         <div className="container mx-auto flex flex-row justify-between items-center ">
           <div className="font-bold text-xl text-white">
             {/* <Link to="/"> */}
@@ -71,7 +74,10 @@ export default function NavBar() {
         </div>
       </div>
       {toggle ? (
-        <div className="px-5 block lg:hidden w-full bg-gray-800 h-auto ">
+        <div
+          className="px-5 block lg:hidden w-full bg-gray-800 h-auto "
+          style={{ position: "fixed", top: "80px" }}
+        >
           <ul className="container mx-auto flex flex-col font text-white">
             <li className={`py-2 ${activeNavLink("/")}`}>
               <Link to="/">

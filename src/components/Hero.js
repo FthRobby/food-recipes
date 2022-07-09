@@ -3,13 +3,13 @@ import ImageHero from "../assets/images/hero-chef.svg";
 export default function Hero({ refRecipes }) {
   const showRef = () => {
     window.scrollTo({
-      top: refRecipes.current.offsetTop - 30,
+      top: refRecipes.current.offsetTop - 90,
       behavior: "smooth",
     });
   };
 
   return (
-    <div className="container mx-auto px-5">
+    <div className="container mx-auto px-5 mt-32">
       {/* show image hero on mobile views and hidden it when desktop view */}
       <div className="lg:block items-center flex flex-col mt-5">
         <img
