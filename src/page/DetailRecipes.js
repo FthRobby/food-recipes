@@ -48,7 +48,7 @@ export default function DetailRecipes() {
           />
         </div>
       ) : (
-        <div className="container mx-auto px-5 mt-18">
+        <div className="container mx-auto px-5 mt-32">
           <div className="text-xl lg:text-3xl font-semibold w-full">
             {recipes.title}
 
