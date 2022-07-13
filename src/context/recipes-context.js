@@ -63,7 +63,7 @@ export const RecipesContextProvider = ({ children }) => {
   // toastify
   const notify = () => {
     toast(" ✅ Resep disimpan", {
-      position: "bottom-right",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -76,7 +76,7 @@ export const RecipesContextProvider = ({ children }) => {
 
   const removeNetify = () => {
     toast("⚠️ Resep dihapus", {
-      position: "bottom-left",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
