@@ -36,7 +36,7 @@ export default function DetailRecipes() {
   }, [params]);
 
   // handle save recipe
-  const { alreadySave, handleSave, notify, handleRemoveItem, removeNetify } = useRecipes();
+  const { handleSave, notify, handleRemoveItem, removeNetify, alreadySave } = useRecipes();
 
   return (
     <div>
@@ -58,7 +58,7 @@ export default function DetailRecipes() {
             {!alreadySave(params?.key) ? (
               <div className="flex justify-self-stretch">
                 <button
-                  className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
+                  className="px-3 py-2 font-bold text-sm rounded-md bg-browen-800 text-white inline"
                   onClick={() => {
                     handleSave(recipes);
                     // handleSave(params);
@@ -71,7 +71,7 @@ export default function DetailRecipes() {
             ) : (
               <div className="flex justify-self-stretch">
                 <button
-                  className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
+                  className="px-3 py-2 font-bold text-sm rounded-md bg-browen-800 text-white inline"
                   onClick={() => {
                     handleRemoveItem(recipes.key);
                     removeNetify();
