@@ -13,11 +13,13 @@ import { useRecipes } from "../context/recipes-context";
 
 export default function DetailRecipes() {
   let { params } = useRouteMatch();
-  const [recipes, setRecipes] = useState("");
+  const [recipes, setRecipes] = useState(null);
   const [ingredient, setIngredient] = useState([]);
   const [step, setStep] = useState([]);
 
   const [loading, setLoading] = useState(true);
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -25,7 +27,7 @@ export default function DetailRecipes() {
       .then((res) => {
         let { title, thumb, desc, servings, times, dificulty } =
           res.data.results;
-        setRecipes({ title, thumb, desc, servings, times, dificulty });
+        setRecipes({ title, thumb, desc, portion: servings, times, dificulty, key: params.key });
         setIngredient(res.data.results.ingredient);
         setStep(res.data.results.step);
         setLoading(false);
@@ -34,7 +36,8 @@ export default function DetailRecipes() {
   }, [params]);
 
   // handle save recipe
-  const { handleSave, notify } = useRecipes();
+  const { alreadySave, handleSave, notify, handleRemoveItem, removeNetify } = useRecipes();
+
   return (
     <div>
       <Navbar />
@@ -52,18 +55,32 @@ export default function DetailRecipes() {
           <div className="text-xl lg:text-3xl font-semibold w-full">
             {recipes.title}
 
-            <div className="flex justify-self-stretch">
-              <button
-                className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
-                onClick={() => {
-                  handleSave(params, recipes.thumb);
-                  // handleSave(params);
-                  notify();
-                }}
-              >
-                Simpan Resep <i className="fa fa-bookmark"></i>
-              </button>
-            </div>
+            {!alreadySave(params?.key) ? (
+              <div className="flex justify-self-stretch">
+                <button
+                  className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
+                  onClick={() => {
+                    handleSave(recipes);
+                    // handleSave(params);
+                    notify();
+                  }}
+                >
+                  Simpan Resep <i className="fa fa-bookmark"></i>
+                </button>
+              </div>
+            ) : (
+              <div className="flex justify-self-stretch">
+                <button
+                  className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
+                  onClick={() => {
+                    handleRemoveItem(recipes.key);
+                    removeNetify();
+                  }}
+                >
+                  Hapus Resep <i className="fa fa-trash text-sm"></i>
+                </button>
+              </div>
+            )}
           </div>
 
           <img
