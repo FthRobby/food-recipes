@@ -47,12 +47,16 @@ export const RecipesContextProvider = ({ children }) => {
   }, [saveRecipes]);
 
   const handleSave = (recipe) => {
-    if (saveRecipes.find((item) => item.key === recipe.key)) {
-      setSaveRecipes([...saveRecipes]);
-    } else {
-      setSaveRecipes([...saveRecipes, recipe]);
-    }
+    setSaveRecipes([...saveRecipes, recipe]);
   };
+
+  const alreadySave = (key) => {
+    if (saveRecipes.find((item) => item.key === key)) {
+      return true
+    } else {
+      return false
+    }
+  }
 
   const handleRemoveItem = (key) => {
     setSaveRecipes((recipes) => {
@@ -97,6 +101,7 @@ export const RecipesContextProvider = ({ children }) => {
         handleRemoveItem,
         notify,
         removeNetify,
+        alreadySave,
       }}
     >
       {children}
