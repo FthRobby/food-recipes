@@ -13,11 +13,13 @@ import { useRecipes } from "../context/recipes-context";
 
 export default function DetailRecipes() {
   let { params } = useRouteMatch();
-  const [recipes, setRecipes] = useState("");
+  const [recipes, setRecipes] = useState(null);
   const [ingredient, setIngredient] = useState([]);
   const [step, setStep] = useState([]);
 
   const [loading, setLoading] = useState(true);
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -25,13 +27,14 @@ export default function DetailRecipes() {
       .then((res) => {
         let { title, thumb, desc, servings, times, dificulty } =
           res.data.results;
-        setRecipes({ title, thumb, desc, servings, times, dificulty });
+        setRecipes({ title, thumb, desc, servings, times, dificulty, key: params.key });
         setIngredient(res.data.results.ingredient);
         setStep(res.data.results.step);
         setLoading(false);
       })
       .catch((err) => console.log(err.message));
   }, [params]);
+
 
   // handle save recipe
   const { handleSave, notify } = useRecipes();
@@ -56,7 +59,7 @@ export default function DetailRecipes() {
               <button
                 className="px-3 py-2 font-bold text-sm rounded bg-browen-800 text-white inline"
                 onClick={() => {
-                  handleSave(params, recipes.thumb);
+                  handleSave(recipes);
                   // handleSave(params);
                   notify();
                 }}
