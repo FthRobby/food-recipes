@@ -31,7 +31,7 @@ export default function Hero({ refRecipes }) {
           </p>
           <button
             onClick={() => showRef()}
-            className="px-3 py-2 font-bold text-lg rounded bg-browen-800 text-white inline"
+            className="px-3 py-2 font-bold text-lg rounded-md bg-browen-800 text-white inline"
           >
             Ayo Masak!!
           </button>

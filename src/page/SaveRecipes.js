@@ -86,7 +86,7 @@ export default function SaveRecipes() {
               masakan
             </div>
             <Link to="/recipes">
-              <button className="px-3 py-2 font-bold text-lg rounded bg-browen-800 text-white inline">
+              <button className="px-3 py-2 font-bold text-lg rounded-md bg-browen-800 text-white inline">
                 Cari Resep <i className="fa fa-chevron-right"></i>
               </button>
             </Link>
